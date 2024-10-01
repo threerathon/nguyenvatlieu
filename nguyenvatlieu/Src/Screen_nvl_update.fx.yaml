@@ -671,6 +671,7 @@
                     }
                 )
             );
+            
             // Làm mới dữ liệu
             Refresh(raw_materials);
             // Chuyển đến màn hình khác
@@ -714,7 +715,14 @@
         ZIndex: =5
 
     Button1 As button:
-        OnSelect: =
+        OnSelect: |-
+            =Patch(
+                raw_materials,
+                Gallery5_1.Selected,
+                {
+                    Photo: Blank()
+                }
+            )
         Text: ="Xóa ảnh"
         Width: =110
         X: =620
