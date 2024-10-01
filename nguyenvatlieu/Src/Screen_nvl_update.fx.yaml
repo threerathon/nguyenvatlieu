@@ -713,7 +713,7 @@
         ZIndex: =5
 
     Button1 As button:
-        OnSelect: =Reset(AddMediaButton1_2)
+        OnSelect: =Set(varImage, "SampleImage");
         Text: ="Xóa ảnh"
         Width: =110
         X: =620
