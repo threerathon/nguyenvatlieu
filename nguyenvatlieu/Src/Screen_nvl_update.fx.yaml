@@ -665,7 +665,8 @@
                                 ),
                                 """",
                                 ""
-                            )
+                            ),
+                            Blank()
                         )
                     }
                 )
@@ -713,7 +714,7 @@
         ZIndex: =5
 
     Button1 As button:
-        OnSelect: =Set(varImage, "SampleImage");
+        OnSelect: =
         Text: ="Xóa ảnh"
         Width: =110
         X: =620
