@@ -1,0 +1,974 @@
+"Screen_nguyenvatlieu As screen.'autoLayout_Sidebar_ver1.0'":
+
+    ScreenContainer6 As groupContainer.verticalAutoLayoutContainer:
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer6 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(0, 18, 107, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =2
+
+        BottomContainer5 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(245, 245, 245, 1)
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutGap: =16
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            ZIndex: =3
+
+            MainContainer6 As groupContainer.verticalAutoLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =7
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =5
+
+                Container5_3 As groupContainer.manualLayoutContainer:
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    ZIndex: =1
+
+                    Container7_3 As groupContainer.manualLayoutContainer:
+                        Fill: =RGBA(56, 96, 178, 0.31)
+                        Height: =641
+                        Width: =1330
+                        ZIndex: =1
+
+                        Button2_1 As button:
+                            Font: =Font.Arial
+                            Height: =50
+                            OnSelect: =ResetForm(Form2);Navigate(Screen_nvl_create);
+                            RadiusBottomLeft: =5
+                            RadiusBottomRight: =5
+                            RadiusTopLeft: =5
+                            RadiusTopRight: =5
+                            Size: =20
+                            Text: ="Thêm"
+                            Width: =120
+                            X: =1194
+                            Y: =27
+                            ZIndex: =2
+
+                        TextInputSearchCode As text:
+                            BorderThickness: =1
+                            Default: =
+                            Font: =Font.Arial
+                            Height: =50
+                            HintText: ="Tìm kiếm mã nvl"
+                            Size: =16
+                            Width: =190
+                            X: =12
+                            Y: =27
+                            ZIndex: =3
+
+                        Container8 As groupContainer.manualLayoutContainer:
+                            Height: =478
+                            Width: =1302
+                            X: =12
+                            Y: =147
+                            ZIndex: =4
+
+                            "Gallery5_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                                DelayItemLoading: =true
+                                Fill: =RGBA(241, 244, 249, 1)
+                                Height: =478
+                                Items: |-
+                                    =SortByColumns(
+                                        Filter(
+                                            raw_materials,
+                                            (IsBlank(TextInputSearchCode.Text) || StartsWith(code, TextInputSearchCode.Text)) &&
+                                            (IsBlank(TextInputSearchName.Text) || StartsWith(name, TextInputSearchName.Text))
+                                        ),
+                                        "Created",
+                                        SortOrder.Descending
+                                    )
+                                Layout: =Layout.Vertical
+                                LoadingSpinner: =LoadingSpinner.Data
+                                NavigationStep: =0
+                                TemplatePadding: =0
+                                TemplateSize: =70
+                                Width: =1303
+                                WrapCount: =0
+                                ZIndex: =1
+
+                                Title2_1 As label:
+                                    BorderThickness: =1
+                                    Font: =Font.Arial
+                                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                    Height: =69
+                                    OnSelect: =Select(Parent)
+                                    Overflow: =Overflow.Scroll
+                                    PaddingBottom: =0
+                                    PaddingTop: =25
+                                    Text: =ThisItem.ID
+                                    VerticalAlign: =VerticalAlign.Top
+                                    Width: =71
+                                    ZIndex: =1
+
+                                Subtitle1_1 As label:
+                                    BorderThickness: =1
+                                    Font: =Font.Arial
+                                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                    Height: =69
+                                    OnSelect: =Select(Parent)
+                                    Overflow: =Overflow.Scroll
+                                    PaddingBottom: =0
+                                    PaddingTop: =25
+                                    Size: =16
+                                    Text: =ThisItem.code
+                                    VerticalAlign: =VerticalAlign.Top
+                                    Width: =145
+                                    X: =71
+                                    ZIndex: =2
+
+                                Separator2_1 As rectangle:
+                                    Height: =1
+                                    OnSelect: =Select(Parent)
+                                    Width: =Parent.TemplateWidth
+                                    Y: =70
+                                    ZIndex: =3
+
+                                Body1_5 As label:
+                                    BorderThickness: =1
+                                    Font: =Font.Arial
+                                    FontWeight: =FontWeight.Lighter
+                                    Height: =69
+                                    OnSelect: =Select(Parent)
+                                    Overflow: =Overflow.Scroll
+                                    PaddingBottom: =0
+                                    PaddingTop: =25
+                                    Size: =16
+                                    Text: =ThisItem.description
+                                    VerticalAlign: =VerticalAlign.Top
+                                    Width: =242
+                                    X: =745
+                                    ZIndex: =5
+
+                                Body1_14 As label:
+                                    BorderThickness: =1
+                                    Font: =Font.Arial
+                                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                    Height: =69
+                                    OnSelect: =Select(Parent)
+                                    Overflow: =Overflow.Scroll
+                                    PaddingBottom: =0
+                                    PaddingRight: =45
+                                    PaddingTop: =25
+                                    Size: =16
+                                    Text: =ThisItem.weight
+                                    VerticalAlign: =VerticalAlign.Top
+                                    Width: =175
+                                    X: =472
+                                    ZIndex: =6
+
+                                Body1_15 As label:
+                                    BorderThickness: =1
+                                    Font: =Font.Arial
+                                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                    Height: =69
+                                    OnSelect: =Select(Parent)
+                                    Overflow: =Overflow.Scroll
+                                    PaddingBottom: =0
+                                    PaddingTop: =25
+                                    Size: =16
+                                    Text: =ThisItem.name
+                                    VerticalAlign: =VerticalAlign.Top
+                                    Width: =256
+                                    X: =216
+                                    ZIndex: =7
+
+                                Body1_16 As label:
+                                    BorderThickness: =1
+                                    Font: =Font.Arial
+                                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                    Height: =69
+                                    OnSelect: =Select(Parent)
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Text: =
+                                    VerticalAlign: =VerticalAlign.Top
+                                    Width: =133
+                                    X: =1168
+                                    ZIndex: =8
+
+                                Image9 As image:
+                                    BorderThickness: =1
+                                    Height: =69
+                                    Image: =ThisItem.Photo
+                                    OnSelect: =Set(varShowImage,true)
+                                    Width: =180
+                                    X: =988
+                                    ZIndex: =9
+
+                                NextArrow2_3 As icon.ChevronRight:
+                                    AccessibleLabel: =Self.Tooltip
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Height: =49
+                                    Icon: =Icon.Trash
+                                    OnSelect: =Set(varShowPopup,true)
+                                    PaddingBottom: =16
+                                    PaddingLeft: =16
+                                    PaddingRight: =16
+                                    PaddingTop: =16
+                                    Tooltip: ="View item details"
+                                    Width: =65
+                                    X: =1231
+                                    Y: =12
+                                    ZIndex: =10
+
+                                NextArrow2_2 As icon.ChevronRight:
+                                    AccessibleLabel: =Self.Tooltip
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    Height: =46
+                                    Icon: =Icon.Edit
+                                    OnSelect: =Navigate(Screen_nvl_detail);ViewForm(Form1)
+                                    PaddingBottom: =16
+                                    PaddingLeft: =16
+                                    PaddingRight: =16
+                                    PaddingTop: =16
+                                    Tooltip: ="View item details"
+                                    Width: =47
+                                    X: =1186
+                                    Y: =16
+                                    ZIndex: =11
+
+                                Icon4 As icon.History:
+                                    Height: =30
+                                    Icon: =Icon.History
+                                    OnSelect: =Set(varShowWeightHistory, true)
+                                    Width: =30
+                                    X: =606
+                                    Y: =17
+                                    ZIndex: =12
+
+                                Body1_6 As label:
+                                    BorderThickness: =1
+                                    Font: =Font.Arial
+                                    FontWeight: =FontWeight.Lighter
+                                    Height: =69
+                                    OnSelect: =Select(Parent)
+                                    PaddingBottom: =0
+                                    PaddingTop: =25
+                                    Size: =16
+                                    Text: =ThisItem.unit.Value
+                                    VerticalAlign: =VerticalAlign.Top
+                                    Width: =98
+                                    X: =647
+                                    ZIndex: =13
+
+                        TextInputSearchName As text:
+                            BorderThickness: =1
+                            Default: =
+                            Font: =Font.Arial
+                            Height: =50
+                            HintText: ="Tìm kiếm tên nvl"
+                            Size: =16
+                            Width: =256
+                            X: =228
+                            Y: =27
+                            ZIndex: =12
+
+                        Group7 As group:
+                            Height: =5
+                            Width: =5
+                            X: =40
+                            Y: =40
+                            ZIndex: =14
+
+                            Rectangle3_1 As rectangle:
+                                Fill: =RGBA(237, 237, 237, 1)
+                                Height: =39
+                                Width: =1302
+                                X: =12
+                                Y: =108
+                                ZIndex: =1
+
+                            Label2_7 As label:
+                                BorderThickness: =1
+                                Font: =Font.Arial
+                                FontWeight: =FontWeight.Semibold
+                                Height: =39
+                                Size: =16
+                                Text: ="STT"
+                                Width: =71
+                                X: =12
+                                Y: =108
+                                ZIndex: =5
+
+                            Label2_8 As label:
+                                BorderThickness: =1
+                                Font: =Font.Arial
+                                FontWeight: =FontWeight.Semibold
+                                Height: =39
+                                Size: =16
+                                Text: ="Hành động"
+                                Width: =134
+                                X: =1180
+                                Y: =108
+                                ZIndex: =6
+
+                            Label2_9 As label:
+                                BorderThickness: =1
+                                Font: =Font.Arial
+                                FontWeight: =FontWeight.Semibold
+                                Height: =39
+                                Size: =16
+                                Text: ="Mã NVL"
+                                Width: =145
+                                X: =83
+                                Y: =108
+                                ZIndex: =7
+
+                            Label2_13 As label:
+                                BorderThickness: =1
+                                Font: =Font.Arial
+                                FontWeight: =FontWeight.Semibold
+                                Height: =39
+                                Size: =16
+                                Text: ="Trọng lượng"
+                                Width: =175
+                                X: =484
+                                Y: =108
+                                ZIndex: =8
+
+                            Label2_25 As label:
+                                BorderThickness: =1
+                                Font: =Font.Arial
+                                FontWeight: =FontWeight.Semibold
+                                Height: =39
+                                Size: =16
+                                Text: ="Tên NVL"
+                                Width: =256
+                                X: =228
+                                Y: =108
+                                ZIndex: =9
+
+                            Label2_26 As label:
+                                BorderThickness: =1
+                                Font: =Font.Arial
+                                FontWeight: =FontWeight.Semibold
+                                Height: =39
+                                Size: =16
+                                Text: ="Mô tả"
+                                Width: =242
+                                X: =757
+                                Y: =108
+                                ZIndex: =10
+
+                            Label2_27 As label:
+                                BorderThickness: =1
+                                Font: =Font.Arial
+                                FontWeight: =FontWeight.Semibold
+                                Height: =39
+                                Size: =16
+                                Text: ="Hình ảnh"
+                                Width: =180
+                                X: =1000
+                                Y: =108
+                                ZIndex: =11
+
+                            Label2_14 As label:
+                                BorderThickness: =1
+                                Font: =Font.Arial
+                                FontWeight: =FontWeight.Semibold
+                                Height: =39
+                                Size: =16
+                                Text: ="Đơn vị"
+                                Width: =98
+                                X: =659
+                                Y: =108
+                                ZIndex: =13
+
+    Label1_5 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Semibold
+        Height: =75
+        Size: =22
+        Text: |-
+            ="Công ty TNHH đèn trang trí công nghệ sinh thái LEDUP 
+            (Phần mềm quản lý nguyên vật liệu)"
+        Width: =883
+        X: =241
+        Y: =16
+        ZIndex: =2
+
+    Button8_4 As button:
+        Fill: =RGBA(0, 134, 208, 1)
+        Font: =Font.Arial
+        Height: =52
+        OnSelect: =Navigate(Scr_login);Set(labeltxt, false)
+        Text: ="Đăng xuất"
+        Width: =136
+        X: =1206
+        Y: =28
+        ZIndex: =3
+
+    GroupPopup As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =11
+
+        Rectangle4 As rectangle:
+            Fill: =RGBA(56, 96, 178, 0.5)
+            Height: =768
+            Visible: =varShowPopup
+            Width: =1366
+            ZIndex: =4
+
+        Rectangle5 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =234
+            Visible: =varShowPopup
+            Width: =487
+            X: =439
+            Y: =238
+            ZIndex: =5
+
+        Rectangle6 As rectangle:
+            Fill: =RGBA(168, 0, 0, 1)
+            Height: =49
+            Visible: =varShowPopup
+            Width: =487
+            X: =439
+            Y: =238
+            ZIndex: =6
+
+        Label6 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Arial
+            Height: =30
+            Size: =16
+            Text: ="Xóa"
+            Visible: =varShowPopup
+            X: =607
+            Y: =247
+            ZIndex: =7
+
+        Label8 As label:
+            Align: =Align.Center
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =48
+            Size: =16
+            Text: ="Bạn có muốn xóa không?"
+            Visible: =varShowPopup
+            Width: =420
+            X: =472
+            Y: =304
+            ZIndex: =8
+
+        Button4 As button:
+            Fill: =RGBA(0, 18, 107, 1)
+            Font: =Font.Arial
+            Height: =41
+            OnSelect: |-
+                =Remove(raw_materials,Gallery5_1.Selected);
+                Set(varShowPopup,false);
+            Text: ="Có"
+            Visible: =varShowPopup
+            Width: =80
+            X: =577
+            Y: =412
+            ZIndex: =9
+
+        Button4_1 As button:
+            Font: =Font.Arial
+            Height: =41
+            OnSelect: =Set(varShowPopup, false)
+            Text: ="Không"
+            Visible: =varShowPopup
+            Width: =110
+            X: =682
+            Y: =412
+            ZIndex: =10
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =16
+
+        Rectangle2 As rectangle:
+            Fill: =RGBA(24, 32, 48, 0.49)
+            Height: =768
+            Visible: =varShowImage
+            Width: =1366
+            ZIndex: =11
+
+        Icon3 As icon.Cancel:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =54
+            Icon: =Icon.Cancel
+            OnSelect: =Set(varShowImage, false)
+            Visible: =varShowImage
+            Width: =54
+            X: =1278
+            Y: =28
+            ZIndex: =12
+
+        UploadedImage1_2 As image:
+            DisplayMode: =DisplayMode.View
+            Height: =712
+            Image: =If(IsBlank(AddMediaButton1_2.Media), Gallery5_1.Selected.Photo, AddMediaButton1_2.Media)
+            Visible: =varShowImage
+            Width: =1126
+            X: =131
+            Y: =28
+            ZIndex: =14
+
+        AddMediaButton1_2 As addMedia:
+            ChangePictureText: =
+            DisplayMode: =DisplayMode.View
+            Height: =517
+            Size: =25
+            Text: =
+            Visible: =varShowImage
+            Width: =827
+            X: =300
+            Y: =152
+            ZIndex: =15
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =50
+
+        Rectangle3 As rectangle:
+            Fill: =RGBA(56, 96, 178, 0.49)
+            Height: =768
+            Visible: =varViewImageHistory
+            Width: =1366
+            ZIndex: =47
+
+        Image3 As image:
+            Height: =599
+            Image: =Gallery2.Selected.Photo
+            Visible: =varViewImageHistory
+            Width: =1109
+            X: =131
+            Y: =111
+            ZIndex: =48
+
+        Icon9 As icon.Cancel:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Cancel
+            OnSelect: =Set(varViewImageHistory, false)
+            Visible: =varViewImageHistory
+            X: =1234
+            Y: =47
+            ZIndex: =49
+
+    Group3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =50
+
+        Rectangle7 As rectangle:
+            Fill: =RGBA(32, 38, 51, 0.3)
+            Height: =768
+            Visible: =varShowWeightHistory
+            Width: =1366
+            ZIndex: =16
+
+        Rectangle8 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =736
+            Visible: =varShowWeightHistory
+            Width: =1340
+            X: =12
+            Y: =16
+            ZIndex: =17
+
+        "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            BorderThickness: =1
+            DelayItemLoading: =true
+            Height: =442
+            Items: =Filter(weight_histories, raw_material_id = Gallery5_1.Selected.ID)
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =68
+            Visible: =varShowWeightHistory
+            Width: =1318
+            X: =24
+            Y: =298
+            ZIndex: =18
+
+            Subtitle1 As label:
+                BorderThickness: =1
+                Font: =Font.Arial
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =68
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingTop: =25
+                Size: =16
+                Text: =ThisItem.ID
+                VerticalAlign: =VerticalAlign.Top
+                Width: =73
+                ZIndex: =3
+
+            Rectangle9 As rectangle:
+                Height: =
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =6
+
+            Subtitle1_2 As label:
+                BorderThickness: =1
+                Font: =Font.Arial
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =68
+                OnSelect: =Select(Parent)
+                Overflow: =Overflow.Scroll
+                PaddingBottom: =0
+                PaddingTop: =25
+                Size: =16
+                Text: =ThisItem.weight
+                VerticalAlign: =VerticalAlign.Top
+                Width: =139
+                X: =381
+                ZIndex: =7
+
+            Subtitle1_3 As label:
+                BorderThickness: =1
+                Font: =Font.Arial
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =68
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingRight: =0
+                PaddingTop: =25
+                Size: =16
+                Text: =ThisItem.unit.Value
+                VerticalAlign: =VerticalAlign.Top
+                Width: =113
+                X: =520
+                ZIndex: =8
+
+            Subtitle1_4 As label:
+                BorderThickness: =1
+                Font: =Font.Arial
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =68
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingTop: =25
+                Size: =16
+                Text: =ThisItem.Created
+                VerticalAlign: =VerticalAlign.Top
+                Width: =222
+                X: =926
+                ZIndex: =9
+
+            Subtitle1_5 As label:
+                BorderThickness: =1
+                Font: =Font.Arial
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =68
+                OnSelect: =Select(Parent)
+                Overflow: =Overflow.Scroll
+                PaddingBottom: =0
+                PaddingTop: =25
+                Size: =16
+                Text: =ThisItem.'Created By'.DisplayName
+                VerticalAlign: =VerticalAlign.Top
+                Width: =170
+                X: =1148
+                ZIndex: =10
+
+            Image2 As image:
+                BorderThickness: =1
+                Height: =68
+                Image: =ThisItem.Photo
+                OnSelect: =Set(varViewImageHistory, true)
+                Width: =109
+                X: =817
+                ZIndex: =11
+
+            Subtitle1_6 As label:
+                BorderThickness: =1
+                Font: =Font.Arial
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =68
+                OnSelect: =Select(Parent)
+                Overflow: =Overflow.Scroll
+                PaddingBottom: =0
+                PaddingTop: =25
+                Size: =16
+                Text: =ThisItem.name
+                VerticalAlign: =VerticalAlign.Top
+                Width: =199
+                X: =182
+                ZIndex: =12
+
+            Subtitle1_7 As label:
+                BorderThickness: =1
+                Font: =Font.Arial
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =68
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingRight: =0
+                PaddingTop: =25
+                Size: =16
+                Text: =ThisItem.description
+                VerticalAlign: =VerticalAlign.Top
+                Width: =184
+                X: =633
+                ZIndex: =13
+
+            Subtitle1_8 As label:
+                BorderThickness: =1
+                Font: =Font.Arial
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =68
+                OnSelect: =Select(Parent)
+                Overflow: =Overflow.Scroll
+                PaddingBottom: =0
+                PaddingRight: =2
+                PaddingTop: =25
+                Size: =16
+                Text: =ThisItem.code
+                VerticalAlign: =VerticalAlign.Top
+                Width: =109
+                X: =73
+                ZIndex: =14
+
+        Label2 As label:
+            Align: =Align.Center
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            Size: =25
+            Text: ="Lịch sử thay đổi"
+            Visible: =varShowWeightHistory
+            Width: =474
+            X: =446
+            Y: =36
+            ZIndex: =19
+
+        Rectangle3_2 As rectangle:
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =39
+            Visible: =varShowWeightHistory
+            Width: =1318
+            X: =24
+            Y: =259
+            ZIndex: =20
+
+        Label2_10 As label:
+            BorderThickness: =1
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =39
+            Size: =16
+            Text: ="ID"
+            Visible: =varShowWeightHistory
+            Width: =73
+            X: =24
+            Y: =259
+            ZIndex: =21
+
+        Label2_16 As label:
+            BorderThickness: =1
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =39
+            Size: =16
+            Text: ="Trọng lượng"
+            Visible: =varShowWeightHistory
+            Width: =139
+            X: =405
+            Y: =259
+            ZIndex: =24
+
+        Label2_15 As label:
+            BorderThickness: =1
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =39
+            Size: =16
+            Text: ="Đơn vị"
+            Visible: =varShowWeightHistory
+            Width: =113
+            X: =544
+            Y: =259
+            ZIndex: =28
+
+        Label2_17 As label:
+            BorderThickness: =1
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =39
+            Size: =16
+            Text: ="Ngày thay đổi"
+            Visible: =varShowWeightHistory
+            Width: =222
+            X: =950
+            Y: =259
+            ZIndex: =29
+
+        Label2_18 As label:
+            BorderThickness: =1
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =39
+            Size: =16
+            Text: ="Người thay đổi"
+            Visible: =varShowWeightHistory
+            Width: =170
+            X: =1172
+            Y: =259
+            ZIndex: =30
+
+        Icon5 As icon.CancelBadge:
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =44
+            Icon: =Icon.CancelBadge
+            OnSelect: =Set(varShowWeightHistory, false)
+            Visible: =varShowWeightHistory
+            Width: =44
+            X: =1298
+            Y: =28
+            ZIndex: =35
+
+        Label2_19 As label:
+            BorderThickness: =1
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =39
+            Size: =16
+            Text: ="Tên NVL"
+            Visible: =varShowWeightHistory
+            Width: =199
+            X: =206
+            Y: =259
+            ZIndex: =36
+
+        Label2_22 As label:
+            BorderThickness: =1
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =39
+            Size: =16
+            Text: ="Hình ảnh"
+            Visible: =varShowWeightHistory
+            Width: =109
+            X: =841
+            Y: =259
+            ZIndex: =39
+
+        Label2_21 As label:
+            BorderThickness: =1
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =39
+            Size: =16
+            Text: ="Mã NVL"
+            Visible: =varShowWeightHistory
+            Width: =109
+            X: =97
+            Y: =259
+            ZIndex: =41
+
+        Label2_23 As label:
+            BorderThickness: =1
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Semibold
+            Height: =39
+            Size: =16
+            Text: ="Mô tả"
+            Visible: =varShowWeightHistory
+            Width: =184
+            X: =657
+            Y: =259
+            ZIndex: =42
+
+        Label7 As label:
+            Font: =Font.Arial
+            Size: =16
+            Text: |-
+                ="Mã NVL:"
+            Visible: =varShowWeightHistory
+            Width: =95
+            X: =24
+            Y: =139
+            ZIndex: =43
+
+        Label7_1 As label:
+            Font: =Font.Arial
+            Size: =16
+            Text: |-
+                ="Tên NVL:"
+            Visible: =varShowWeightHistory
+            Width: =107
+            X: =24
+            Y: =179
+            ZIndex: =44
+
+        Label7_2 As label:
+            Font: =Font.Arial
+            Size: =16
+            Text: =Gallery5_1.Selected.name
+            Visible: =varShowWeightHistory
+            Width: =676
+            X: =131
+            Y: =179
+            ZIndex: =45
+
+        Label7_3 As label:
+            Font: =Font.Arial
+            Size: =16
+            Text: =Gallery5_1.Selected.code
+            Visible: =varShowWeightHistory
+            Width: =676
+            X: =131
+            Y: =139
+            ZIndex: =46
+

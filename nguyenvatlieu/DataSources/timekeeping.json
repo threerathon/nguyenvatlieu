@@ -1,0 +1,53 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2024-06-26T16:30:50.2010000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "{Attachments}": "Attachments",
+      "{Attachments}@odata.type": "{Attachments} ({Attachments}@odata.type)",
+      "{FilenameWithExtension}": "File name with extension",
+      "{FullPath}": "Full Path",
+      "{HasAttachments}": "Has attachments",
+      "{Identifier}": "Identifier",
+      "{IsFolder}": "IsFolder",
+      "{Link}": "Link to item",
+      "{ModerationComment}": "Comments associated with the content approval of this list item",
+      "{ModerationStatus}": "Content approval status",
+      "{Name}": "Name",
+      "{Path}": "Folder path",
+      "{Thumbnail}": "Hình thu nhỏ",
+      "{TriggerWindowEndToken}": "Trigger Window End Token",
+      "{TriggerWindowStartToken}": "Trigger Window Start Token",
+      "{VersionNumber}": "Version number",
+      "Author": "Created By",
+      "Author#Claims": "Created By Claims",
+      "ComplianceAssetId": "Compliance Asset Id",
+      "Created": "Created",
+      "Editor": "Modified By",
+      "Editor#Claims": "Modified By Claims",
+      "ID": "ID",
+      "L_x1ea7_n1": "Lần 1",
+      "L_x1ea7_n2": "Lần 2",
+      "L_x1ea7_n3": "Lần 3",
+      "L_x1ea7_n4": "Lần 4",
+      "L_x1ea7_n5": "Lần 5",
+      "L_x1ea7_n6": "Lần 6",
+      "Ma": "Mã NV",
+      "Modified": "Modified",
+      "Ng_x00e0_y": "Ngày",
+      "OData__ColorTag": "Color Tag",
+      "T_x00ea_nNV": "Tên NV",
+      "Title": "Title"
+    },
+    "DatasetName": "https://8chj4x.sharepoint.com/sites/Chmcng",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "timekeeping",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

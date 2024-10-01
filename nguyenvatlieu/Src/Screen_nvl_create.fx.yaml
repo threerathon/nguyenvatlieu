@@ -1,0 +1,709 @@
+"Screen_nvl_create As screen.'autoLayout_Sidebar_ver1.0'":
+
+    ScreenContainer7 As groupContainer.verticalAutoLayoutContainer:
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        Width: =Parent.Width
+        ZIndex: =16
+
+        HeaderContainer7 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(0, 18, 107, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =2
+
+        BottomContainer6 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(245, 245, 245, 1)
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutGap: =16
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            ZIndex: =3
+
+            MainContainer7 As groupContainer.verticalAutoLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =7
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =5
+
+                Form2 As form:
+                    DataSource: =raw_materials
+                    DefaultMode: =FormMode.New
+                    LayoutMinHeight: =250
+                    LayoutMinWidth: =400
+                    ZIndex: =1
+
+                    Attachments_DataCard2 As typedDataCard.attachmentsEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="{Attachments}"
+                        Default: =ThisItem.Attachments
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@raw_materials],DataSourceInfo.DisplayName,Attachments)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =false
+                        Update: =DataCardValue7.Attachments
+                        Width: =443
+                        X: =2
+                        Y: =1
+                        ZIndex: =1
+
+                        DataCardKey7 As label:
+                            AutoHeight: =true
+                            Font: =Font.Arial
+                            Height: =34
+                            Size: =16
+                            Text: |-
+                                ="Tiêu chuẩn, báo cáo:"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue7 As attachments:
+                            AddAttachmentText: ="đính kèm tập tin"
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            DisplayMode: =Parent.DisplayMode
+                            Font: =Font.Arial
+                            Height: =183
+                            IsInDataCard: =true
+                            Items: =Parent.Default
+                            MaxAttachments: =10
+                            MaxAttachmentSize: =262144
+                            MaxAttachmentsText: ="Không có gì kèm theo."
+                            NoAttachmentsText: ="Không có gì kèm theo."
+                            PaddingBottom: =5
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Size: =16
+                            Tooltip: =Parent.DisplayName
+                            Width: =383
+                            X: =30
+                            Y: =54
+                            ZIndex: =2
+
+                        ErrorMessage7 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue7.Y + DataCardValue7.Height
+                            ZIndex: =3
+
+                        StarVisible7 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey7.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey7.Y
+                            ZIndex: =4
+
+                    unit_DataCard1 As typedDataCard.comboBoxEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="unit"
+                        Default: =ThisItem.unit
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@raw_materials],DataSourceInfo.DisplayName,unit)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =false
+                        Update: =DataCardValue8.Selected
+                        Width: =443
+                        X: =0
+                        Y: =2
+                        ZIndex: =1
+
+                        DataCardKey8 As label:
+                            AutoHeight: =true
+                            Font: =Font.Arial
+                            Height: =34
+                            Size: =16
+                            Text: |-
+                                ="Đơn vị:"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue8 As combobox:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            DefaultSelectedItems: =Parent.Default
+                            DisplayFields: =["Value"]
+                            DisplayMode: =Parent.DisplayMode
+                            Font: =Font.Arial
+                            InputTextPlaceholder: ="Chọn đơn vị"
+                            Items: =Choices([@weight_histories].unit)
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                            SearchFields: =["Value"]
+                            SearchItems: =Choices(weight_histories.unit,DataCardValue8.SearchText)
+                            SelectMultiple: =false
+                            Size: =16
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey8.Y + DataCardKey8.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage8 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue8.Y + DataCardValue8.Height
+                            ZIndex: =3
+
+                        StarVisible8 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey8.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey8.Y
+                            ZIndex: =4
+
+                    code_DataCard1 As typedDataCard.textualEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="code"
+                        Default: =ThisItem.code
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@raw_materials],DataSourceInfo.DisplayName,code)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@raw_materials], DataSourceInfo.MaxLength, code)
+                        Required: =false
+                        Update: =DataCardValue2.Text
+                        Width: =443
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                        DataCardKey2 As label:
+                            AutoHeight: =true
+                            Font: =Font.Arial
+                            Height: =34
+                            Size: =16
+                            Text: |-
+                                ="Mã NVL:"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue2 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Font: =Font.Arial
+                            HintText: ="Nhập"
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Size: =16
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage2 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue2.Y + DataCardValue2.Height
+                            ZIndex: =3
+
+                        StarVisible2 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey2.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey2.Y
+                            ZIndex: =4
+
+                    name_DataCard2 As typedDataCard.textualEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="name"
+                        Default: =ThisItem.name
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@raw_materials],DataSourceInfo.DisplayName,name)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@raw_materials], DataSourceInfo.MaxLength, name)
+                        Required: =false
+                        Update: =DataCardValue3.Text
+                        Width: =443
+                        X: =1
+                        Y: =0
+                        ZIndex: =2
+
+                        DataCardKey3 As label:
+                            AutoHeight: =true
+                            Font: =Font.Arial
+                            Height: =34
+                            Size: =16
+                            Text: |-
+                                ="Tên NVL:"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue3 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Font: =Font.Arial
+                            HintText: ="Nhập"
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Size: =16
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage3 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue3.Y + DataCardValue3.Height
+                            ZIndex: =3
+
+                        StarVisible3 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey3.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey3.Y
+                            ZIndex: =4
+
+                    weight_DataCard1 As typedDataCard.textualEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="weight"
+                        Default: =ThisItem.weight
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@raw_materials],DataSourceInfo.DisplayName,weight)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@raw_materials], DataSourceInfo.MaxLength, weight)
+                        Required: =false
+                        Update: =DataCardValue5.Text
+                        Width: =443
+                        X: =2
+                        Y: =0
+                        ZIndex: =2
+
+                        DataCardKey5 As label:
+                            AutoHeight: =true
+                            Font: =Font.Arial
+                            Height: =34
+                            Size: =16
+                            Text: |-
+                                ="Trọng lượng:"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue5 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Font: =Font.Arial
+                            HintText: ="Nhập"
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Size: =16
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage5 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue5.Y + DataCardValue5.Height
+                            ZIndex: =3
+
+                        StarVisible5 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey5.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey5.Y
+                            ZIndex: =4
+
+                    description_DataCard2 As typedDataCard.textualEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="description"
+                        Default: =ThisItem.description
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@raw_materials],DataSourceInfo.DisplayName,description)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@raw_materials], DataSourceInfo.MaxLength, description)
+                        Required: =false
+                        Update: =DataCardValue4.Text
+                        Width: =443
+                        X: =0
+                        Y: =1
+                        ZIndex: =2
+
+                        DataCardKey4 As label:
+                            AutoHeight: =true
+                            Font: =Font.Arial
+                            Height: =34
+                            Size: =16
+                            Text: |-
+                                ="Mô tả đặc tính:"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue4 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Font: =Font.Arial
+                            Height: =183
+                            HintText: ="Nhập"
+                            MaxLength: =Parent.MaxLength
+                            Mode: =TextMode.MultiLine
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Size: =16
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage4 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue4.Y + DataCardValue4.Height
+                            ZIndex: =3
+
+                        StarVisible4 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey4.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey4.Y
+                            ZIndex: =4
+
+                    Photo_DataCard1 As typedDataCard.textualEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Photo"
+                        Default: =ThisItem.Photo
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@raw_materials],DataSourceInfo.DisplayName,Photo)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@raw_materials], DataSourceInfo.MaxLength, Photo)
+                        Required: =false
+                        Update: =
+                        Width: =443
+                        X: =1
+                        Y: =1
+                        ZIndex: =2
+
+                        DataCardKey6 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Size: =16
+                            Text: |-
+                                ="Hình ảnh:"
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        ErrorMessage6 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =AddMediaWithImage1.Y + AddMediaWithImage1.Height
+                            ZIndex: =3
+
+                        StarVisible6 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey6.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey6.Y
+                            ZIndex: =4
+
+                        AddMediaWithImage1 As group:
+                            Height: =5
+                            Width: =5
+                            X: =40
+                            Y: =40
+                            ZIndex: =5
+
+                            UploadedImage1 As image:
+                                Height: =183
+                                Image: =If(IsBlank(AddMediaButton1.Media), SampleImage, AddMediaButton1.Media)
+                                ImagePosition: =ImagePosition.Fill
+                                Width: =383
+                                X: =30
+                                Y: =54
+                                ZIndex: =6
+
+                            AddMediaButton1 As addMedia:
+                                ChangePictureText: ="Đổi ảnh"
+                                Font: =Font.Arial
+                                Height: =183
+                                Size: =16
+                                Text: ="Chọn ảnh"
+                                Width: =383
+                                X: =30
+                                Y: =54
+                                ZIndex: =7
+
+    Button1_2 As button:
+        Font: =Font.Arial
+        OnSelect: |
+            =// Bước 1: Lưu các trường từ Form2, bao gồm cả file attachments
+            Set(
+                varRecordIDCreate,
+                Patch(
+                    raw_materials,
+                    Defaults(raw_materials),
+                    Form2.Updates
+                ).ID
+            );
+            
+            // Bước 2: Cập nhật lại cột Photo với hình ảnh đã được tải lên
+            If(
+                !IsBlank(varRecordIDCreate),// Kiểm tra xem bản ghi đã được lưu thành công chưa
+                Patch(
+                    raw_materials,
+                    LookUp(
+                        raw_materials,
+                        ID = varRecordIDCreate
+                    ),// Cập nhật bản ghi vừa tạo
+                    {
+                        Photo: Substitute(
+                            JSON(
+                                UploadedImage1.Image,
+                                JSONFormat.IncludeBinaryData
+                            ),
+                            """",
+                            ""
+                        )
+                    }
+                )
+            );
+            
+            Set(
+                varRecordIDCreateHistory,
+                Patch(
+                    weight_histories,
+                    Defaults(weight_histories),
+                    Form2.Updates
+                ).ID
+            );
+            If(
+                !IsBlank(varRecordIDCreateHistory),// Kiểm tra xem bản ghi đã được lưu thành công chưa
+                Patch(
+                    weight_histories,
+                    LookUp(
+                        weight_histories,
+                        ID = varRecordIDCreateHistory
+                    ),// Cập nhật bản ghi vừa tạo
+                    {
+                        raw_material_id:varRecordIDCreate,
+                        Photo: Substitute(
+                            JSON(
+                                UploadedImage1.Image,
+                                JSONFormat.IncludeBinaryData
+                            ),
+                            """",
+                            ""
+                        )
+                    }
+                )
+            );
+            
+            
+            // Chuyển đến màn hình khác
+            Navigate(Screen_nguyenvatlieu);
+            
+            // Thông báo thành công
+            Notify(
+                "Tạo nguyên vật liệu thành công!",// Nội dung thông báo
+                NotificationType.Success// Loại thông báo (thành công)
+            );
+            // Đặt lại biểu mẫu
+            ResetForm(Form2);
+        Size: =20
+        Text: ="Thêm"
+        Width: =130
+        X: =1188
+        Y: =688
+        ZIndex: =17
+
+    Button1_7 As button:
+        Font: =Font.Arial
+        OnSelect: =Navigate(Screen_nguyenvatlieu)
+        Size: =20
+        Text: ="Quay lại"
+        Width: =145
+        X: =1015
+        Y: =688
+        ZIndex: =18
+
+    Label1_6 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Semibold
+        Height: =75
+        Size: =22
+        Text: |-
+            ="Công ty TNHH đèn trang trí công nghệ sinh thái LEDUP
+            (Phần mềm quản lý nguyên vật liệu)"
+        Width: =883
+        X: =241
+        Y: =16
+        ZIndex: =19
+
+    Button8_5 As button:
+        Fill: =RGBA(0, 134, 208, 1)
+        Font: =Font.Arial
+        Height: =52
+        OnSelect: =Navigate(Scr_login);Set(labeltxt, false)
+        Text: ="Đăng xuất"
+        Width: =136
+        X: =1201
+        Y: =28
+        ZIndex: =20
+

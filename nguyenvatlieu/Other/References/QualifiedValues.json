@@ -1,0 +1,64 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_exportedexcel_forms",
+      "Namespace": "Exported Excels (Forms)",
+      "Values": {}
+    },
+    {
+      "Kind": "default.cds_documenttemplate_forms",
+      "Namespace": "Document Templates (Forms)",
+      "Values": {
+        "information": "509ab872-dce9-4090-8535-a89e33bab96a"
+      }
+    },
+    {
+      "Kind": "default.cds_sample_donation_forms",
+      "Namespace": "Donations (Forms)",
+      "Values": {
+        "Donation Card": "54bc4130-207b-412f-a620-6707ffae7e94",
+        "Donation Main Form": "122cef79-4ea2-4096-99ef-e79f29b95ca0",
+        "Donation Quick Create": "9ff68457-d526-4c82-a51d-04e66063dd5f",
+        "Donation Quick View Form": "a1e31d21-c812-4e19-9786-b9a089c1d968"
+      }
+    },
+    {
+      "Kind": "default.cds_duplicaterule_forms",
+      "Namespace": "Duplicate Detection Rules (Forms)",
+      "Values": {
+        "Information": "048ba661-cb40-463c-a394-2496a6118495"
+      }
+    },
+    {
+      "Kind": "default.cds_duplicaterulecondition_forms",
+      "Namespace": "Duplicate Rule Conditions (Forms)",
+      "Values": {}
+    },
+    {
+      "Kind": "default.cds_dvfilesearchattribute_forms",
+      "Namespace": "DVFileSearchAttributes (Forms)",
+      "Values": {
+        "Information": "937e52d8-46ed-47ec-86ca-db510989f361"
+      }
+    },
+    {
+      "Kind": "default.cds_dvfilesearchentity_forms",
+      "Namespace": "DVFileSearchEntities (Forms)",
+      "Values": {
+        "DVFileSearchEntity main form": "7dbdaffa-a52c-ee11-bdf5-6045bd036227"
+      }
+    },
+    {
+      "Kind": "default.cds_dvfilesearch_forms",
+      "Namespace": "DVFileSearches (Forms)",
+      "Values": {
+        "DVFileSearch main form": "2daca198-a62c-ee11-bdf5-000d3a32019b"
+      }
+    },
+    {
+      "Kind": "default.cds_duplicaterecord_forms",
+      "Namespace": "Duplicate Records (Forms)",
+      "Values": {}
+    }
+  ]
+}
