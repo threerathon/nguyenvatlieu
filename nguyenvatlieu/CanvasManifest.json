@@ -102,7 +102,7 @@
       "zeroalltabindexes": true
     },
     "Author": "",
-    "BindingErrorCount": 0,
+    "BindingErrorCount": 3,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -139,7 +139,6 @@
     "Screen_nguyenvatlieu",
     "Screen_nvl_create",
     "Screen_nvl_detail",
-    "Screen_nvl_update",
-    "Screen1"
+    "Screen_nvl_update"
   ]
 }
