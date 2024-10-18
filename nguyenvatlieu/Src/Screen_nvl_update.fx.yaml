@@ -714,18 +714,3 @@
         Y: =28
         ZIndex: =5
 
-    Button1 As button:
-        OnSelect: |-
-            =Patch(
-                raw_materials,
-                Gallery5_1.Selected,
-                {
-                    Photo: Blank()
-                }
-            )
-        Text: ="Xóa ảnh"
-        Width: =110
-        X: =620
-        Y: =455
-        ZIndex: =6
-
