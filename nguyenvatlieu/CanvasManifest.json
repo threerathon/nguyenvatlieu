@@ -102,7 +102,7 @@
       "zeroalltabindexes": true
     },
     "Author": "",
-    "BindingErrorCount": 3,
+    "BindingErrorCount": 5,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -132,7 +132,7 @@
     "PublishDataLocally": false,
     "PublishResourcesLocally": false,
     "PublishTarget": "player",
-    "UserLocale": "en-US"
+    "UserLocale": "vi-VN"
   },
   "ScreenOrder": [
     "Scr_login",
